@@ -1,0 +1,58 @@
+﻿<Controls:MetroWindow x:Class="wp.popUC.discount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:wp.popUC"
+        mc:Ignorable="d"
+          Title="折扣信息管理栏" Height="346" Width="480" Background="White" ResizeMode="NoResize"   WindowStartupLocation="CenterScreen"  Focusable="True" PreviewKeyDown="window_PreviewKeyDown">
+    <Window.Resources>
+        <!---Button右边-->
+        <Style TargetType="Button" x:Key="TypeStyle">
+            <Setter Property="Background"  Value="#139AD4"/>
+            <Setter Property="FontSize" Value="23"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="Wheat">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="16*" />
+            <ColumnDefinition Width="16*" />
+            <ColumnDefinition Width="16*" />
+            <ColumnDefinition Width="16*" />
+            <ColumnDefinition Width="16*" />
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="45" />
+            <RowDefinition Height="45" />
+            <RowDefinition Height="45" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7"  Background="Wheat"  Content="当前收银员没有(单笔议价/折扣权限)，请输入授权码" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="17"/>
+        <Label  Grid.Row="1" Grid.Column="1" FontSize="13" Content="收银员编码"  HorizontalAlignment="Center"  VerticalAlignment="Center"></Label>
+        <TextBox  Name="userName" Grid.Row="1" Grid.Column="2"  Width="300"  FontSize="21" Grid.ColumnSpan="4" HorizontalAlignment="Center"  VerticalAlignment="Center" ></TextBox>
+        <Label  Grid.Row="2" Grid.Column="1" Content="收银员口令"  HorizontalAlignment="Center"  VerticalAlignment="Center"></Label>
+        <PasswordBox   Name="userPass" Grid.Row="2" Grid.Column="2" Width="300" FontSize="21"  Grid.ColumnSpan="4" HorizontalAlignment="Center"  VerticalAlignment="Center"></PasswordBox>
+        <Button Name="btn__" Grid.Row="4" Grid.Column="1" Content="-" Style="{StaticResource TypeStyle}" Click="btn___Click"></Button>
+        <Button Name="btn7" Grid.Row="4" Grid.Column="2" Content="7" Style="{StaticResource TypeStyle}" Click="btn7_Click"></Button>
+        <Button Name="btn8" Grid.Row="4" Grid.Column="3" Content="8" Style="{StaticResource TypeStyle}" Click="btn8_Click"></Button>
+        <Button Name="btn9" Grid.Row="4" Grid.Column="4" Content="9" Style="{StaticResource TypeStyle}" Click="btn9_Click"></Button>
+        <Button Name="del" Grid.Row="4" Grid.Column="5" Content="退格" Style="{StaticResource TypeStyle}" Background="White" Click="del_Click" ></Button>
+        <Button  Name="btn_" Grid.Row="5" Grid.Column="1" Content="." Style="{StaticResource TypeStyle}" Click="btn__Click"></Button>
+        <Button  Name="btn4" Grid.Row="5" Grid.Column="2" Content="4" Style="{StaticResource TypeStyle}" Click="btn4_Click"></Button>
+        <Button  Name="btn5" Grid.Row="5" Grid.Column="3" Content="5" Style="{StaticResource TypeStyle}" Click="btn5_Click"></Button>
+        <Button  Name="btn6" Grid.Row="5" Grid.Column="4" Content="6" Style="{StaticResource TypeStyle}" Click="btn6_Click"></Button>
+        <Button Name="cancel" Grid.Row="5" Grid.Column="5" Content="取消" Style="{StaticResource TypeStyle}"  Background="#DE5347" Foreground="White" Click="cancel_Click"  ></Button>
+        <Button  Name="btn0"  Grid.Row="6" Grid.Column="1" Content="0" Style="{StaticResource TypeStyle}" Click="btn0_Click"></Button>
+        <Button  Name="btn1"  Grid.Row="6" Grid.Column="2" Content="1" Style="{StaticResource TypeStyle}" Click="btn1_Click"></Button>
+        <Button  Name="btn2"  Grid.Row="6" Grid.Column="3" Content="2" Style="{StaticResource TypeStyle}" Click="btn2_Click"></Button>
+        <Button  Name="btn3"  Grid.Row="6" Grid.Column="4" Content="3" Style="{StaticResource TypeStyle}" Click="btn3_Click"></Button>
+        <Button  Name="OK" Grid.Row="6" Grid.Column="5" Content="确认" Style="{StaticResource TypeStyle}" Background="#17A05E" Foreground="White" Click="OK_Click" ></Button>
+    </Grid>
+</Controls:MetroWindow>

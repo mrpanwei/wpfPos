@@ -1,0 +1,212 @@
+﻿<Controls:MetroWindow x:Class="wp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:wp" 
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title=" 宏创科技-智慧称重系统" Height="640" Width="1024" Background="#139AD4"   Focusable="True" PreviewKeyDown="window_PreviewKeyDown">
+    <!---源样式-->
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="ButtonStyle">
+            <Setter Property="Foreground"  Value="Blue"/>
+            <Setter Property="FontSize" Value="19"></Setter>
+            <Setter Property="FontFamily" Value="CourierNew"/>
+        </Style>
+        <!---Button右边-->
+        <Style TargetType="Button" x:Key="TypeStyle">
+            <Setter Property="Background"  Value="#139AD4"/>
+            <Setter Property="Foreground"  Value="White"/>
+            <Setter Property="FontSize" Value="19"></Setter>
+            <Setter Property="Width" Value="90"></Setter>
+            <Setter Property="Height" Value="70"></Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="inTypeStyle" BasedOn="{StaticResource TypeStyle}">
+            <Setter Property="Width" Value="74"></Setter>
+            <Setter Property="Height" Value="72"></Setter>
+            <Setter Property="Background" Value="#00BBD4"></Setter>
+            <Setter Property="Margin" Value="0,0,2,0"></Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="goodsStyle" BasedOn="{StaticResource TypeStyle}">
+            <Setter Property="Width" Value="74"></Setter>
+            <Setter Property="Height" Value="72"></Setter>
+            <Setter Property="Background" Value="#F0AD4E"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="Margin" Value="0,0,2,0"></Setter>
+        </Style>
+        <Style TargetType="Label" x:Key="goodsListStyle">
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="13"></Setter>
+            <Setter Property="Margin" Value="1,3,3,1"></Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="topStyle" >
+            <Setter Property="Width" Value="70"></Setter>
+            <Setter Property="Background" Value="#00BBD4"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+        </Style>
+        <!---Button底部-->
+        <Style TargetType="Button" x:Key="FunStyle">
+            <Setter Property="Background"  Value="#139AD4"/>
+            <Setter Property="Foreground"  Value="Black"/>
+            <Setter Property="FontSize" Value="17"></Setter>
+            <Setter Property="Width" Value="100"></Setter>
+            <Setter Property="Height" Value="68"></Setter>
+            <Setter Property="Margin" Value="0,0,1,0"></Setter>
+        </Style>
+        <!---Label底部-->
+        <Style TargetType="Label" x:Key="InfoStyle">
+            <Setter Property="Foreground"  Value="Black"/>
+            <Setter Property="FontFamily"  Value="monospace"/>
+            <Setter Property="FontSize" Value="17"></Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="TriggerButtonStyle" BasedOn="{StaticResource ButtonStyle}">
+            <Style.Triggers>
+                <Trigger  Property="IsPressed" Value="True">
+                    <Setter Property="Foreground" Value="Blue"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+    </Window.Resources>
+
+    <DockPanel >
+        <!---基础信息栏-->
+        <Grid DockPanel.Dock="top" Height="110" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="100*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+            </Grid.RowDefinitions>
+            <Label  Content="收银台：001" Grid.Row="0" Grid.Column="0" Style="{StaticResource InfoStyle}" Margin="3"></Label>
+            <Label  Content="收营员：张三" Grid.Row="1" Grid.Column="0" Style="{StaticResource InfoStyle}" Margin="3"></Label>
+            <Label Name="vipCard" Content="会员卡：" Grid.Row="2" Grid.Column="0" Style="{StaticResource InfoStyle}" Margin="3"></Label>
+            <Label  Content="2018-01-10 09:00" Grid.Row="0" Grid.Column="1" Style="{StaticResource InfoStyle}" Margin="3"></Label>
+            <Label  Content="营业员：系统默认" Grid.Row="1" Grid.Column="1" Style="{StaticResource InfoStyle}" Margin="3"></Label>
+            <!--<Image Source="img/ime.png" Width="32" Height="32"  Grid.Row="0" Grid.Column="2" ></Image>-->
+            <Label  Content="扬州声谷店" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Style="{StaticResource InfoStyle}" Foreground="White" ></Label>
+            <Label  Content="SN000619" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" Style="{StaticResource InfoStyle}" Foreground="White" ></Label>
+            <Grid  Grid.Row="0" Grid.Column="3" Grid.RowSpan="3" Background="White" Margin="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="33*" />
+                    <ColumnDefinition Width="21*" />
+                    <ColumnDefinition Width="26*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="55" />
+                    <RowDefinition Height="55" />
+                </Grid.RowDefinitions>
+                <Label  Content="上单" Grid.Row="0" Grid.Column="0" Style="{StaticResource InfoStyle}" FontSize="13" FontFamily="Arial,SimSun"></Label>
+                <Label  Content="1801100916110012" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Style="{StaticResource InfoStyle}"></Label>
+                <Label  Content="合计" Grid.Row="1" Grid.Column="0" Style="{StaticResource InfoStyle}" FontSize="13" FontFamily="Arial,SimSun"></Label>
+                <Label  Content="4396.00" Grid.Row="1" Grid.Column="1" Foreground="Red"  Style="{StaticResource InfoStyle}"></Label>
+                <Label  Content="优惠" Grid.Row="1" Grid.Column="2" Style="{StaticResource InfoStyle}" FontSize="13" FontFamily="Arial,SimSun"></Label>
+                <Label  Content="0.00" Grid.Row="1" Grid.Column="3"  Foreground="Green" Style="{StaticResource InfoStyle}"></Label>
+            </Grid>
+            <Label Name="weight" Content="0.00" Grid.Row="0" Grid.Column="5" Foreground="White" FontFamily="monospace" HorizontalAlignment="Center"  Margin="0,0,5,0" VerticalAlignment="Center" FontSize="17"></Label>
+            <Button Name="n_balance" Content="结 算 (F8)" FontFamily="monospace" Grid.Row="1" Grid.Column="4" Grid.RowSpan="2" Margin="2" FontSize="27" Background="#139AD4" Click="n_balance_Click"></Button>
+        </Grid>
+     
+        <WrapPanel Margin="2,0,0,0"  DockPanel.Dock="Bottom" Height="70" >
+            <Button  Name="n_counts"  Style="{StaticResource FunStyle}" Content="数量(F1)" Click="n_counts_Click"   />
+            <Button Name="n_del"  Style="{StaticResource FunStyle}"  Content="删除(F2)" Click="n_del_Click" />
+            <Button   Style="{StaticResource FunStyle}"  Content="挂单(F3)" />
+            <Button  Name="n_vipCard" Style="{StaticResource FunStyle}" Content="会员(F4)" Click="n_vipCard_Click" />
+            <Button   Style="{StaticResource FunStyle}"  Content="商品(F5)" />
+            <Button  Name="n_keyboard"  Style="{StaticResource FunStyle}"  Content="键盘(F6)" Click="n_keyboard_Click" />
+            <Button  Name="n_discount"  Style="{StaticResource FunStyle}"  Content="折扣(F7)" Click="n_discount_Click" />
+            <Button  Name="n_admin"  Style="{StaticResource FunStyle}"  Content="管理(F9)" Click="n_admin_Click" />
+            <Button Name="n_exit"  Style="{StaticResource FunStyle}"  Content="退出(Esc)" Width="100" Click="n_exit_Click" />
+        </WrapPanel >
+
+       
+            <DockPanel  DockPanel.Dock="Right" Width="90">
+            <Button Name="categoryUp" Style="{StaticResource TypeStyle}" DockPanel.Dock="top"   Content="▲" Height="40" Click="categoryUp_Click"></Button>
+            <Button Name="categoryDown" Style="{StaticResource TypeStyle}" DockPanel.Dock="Bottom" Content="▼" Height="40" Click="categoryDown_Click"></Button>
+            <ScrollViewer  PanningMode="VerticalOnly" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" >
+                <StackPanel Name="rightPanel"  Orientation="Vertical" DockPanel.Dock="Right" Width="90">
+                   
+                </StackPanel>
+            </ScrollViewer>
+        </DockPanel>
+
+        <Border BorderThickness="0,0,2,0">
+            <DockPanel  DockPanel.Dock="left" Width="400" Background="White">
+                <Grid Background="Gainsboro" Margin="1" DockPanel.Dock="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="40*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="20*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="15">序号</Label>
+                    <Label Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="15">商品名称</Label>
+                    <Label Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="15">数量</Label>
+                    <Label Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="15">单价</Label>
+                    <Label Grid.Row="0" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="15">合计</Label>
+                </Grid>
+                <Grid Background="Gainsboro" DockPanel.Dock="Bottom">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25*" />
+                        <ColumnDefinition Width="25*" />
+                        <ColumnDefinition Width="25*" />
+                        <ColumnDefinition Width="25*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+                    <Label Name="realWeight" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Foreground="Green">0.00</Label>
+                    <Label Name="realSale" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Left"  FontWeight="Bold" Foreground="Red" FontSize="19">0.00</Label>
+                    <Button Content="△" FontSize="19" Foreground="White" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="#139AD4" ></Button>
+                    <Button Content="▽" FontSize="19" Foreground="White" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Background="#139AD4" ></Button>
+                </Grid>
+                <ScrollViewer  PanningMode="VerticalOnly" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" >
+                    <StackPanel Name="goodsList"  Orientation="Vertical">
+
+
+                    </StackPanel>
+                </ScrollViewer>
+            </DockPanel>
+        </Border>
+
+            <DockPanel Name="activePanel">
+                <DockPanel DockPanel.Dock="Top">
+                <Button Content="◀" DockPanel.Dock="Left"  Background="#139AD4" Height="40" Width="40" Foreground="White"  FontSize="21"/>
+                <Button Content="▶" DockPanel.Dock="Right" Background="#139AD4" Height="40"  Width="40" Foreground="White"  FontSize="21"/>
+
+                <DockPanel>
+                    <Button Content="全部"  Width="70" Background="#139AD4" Name="full2"  Foreground="White" FontSize="17" Click="full2_Click"></Button>
+                    <StackPanel Name="topPanel" DockPanel.Dock="Right" Orientation="Horizontal">
+                    </StackPanel>
+                </DockPanel>
+            </DockPanel>
+            <WrapPanel Background="White" Name="goodsArea">
+               
+            </WrapPanel>
+        </DockPanel>
+            
+   
+        
+        
+        
+        
+
+    </DockPanel>
+    
+</Controls:MetroWindow>

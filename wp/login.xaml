@@ -1,0 +1,22 @@
+﻿<Controls:MetroWindow x:Class="wp.login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:wp"
+        mc:Ignorable="d"
+        Title="ime-智慧称重" 
+        Height="283" Width="420" Background="#139AD4" 
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        Focusable="True" PreviewKeyDown="window_PreviewKeyDown">
+    <Grid Margin="0,0,0,-21">
+        <TextBox Name="txtUserName" TabIndex="0" Text="admin" HorizontalAlignment="Left" Height="30" Margin="85,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" MaxLength="10"/>
+        <Label Content="账户："  HorizontalAlignment="Left" Margin="80,19,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.554,-0.267"/>
+        <Label Content="密码：" HorizontalAlignment="Left" Margin="80,85,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.586,-0.5"/>
+        <Button Name="btnLogin" TabIndex="2" Content="登陆" HorizontalAlignment="Left" Margin="236,200,0,0" VerticalAlignment="Top" Width="104" FontSize="16" RenderTransformOrigin="0.493,1.03" Click="btnLogin_Click"/>
+        <CheckBox Name="chkRemeber" Content="记住我" HorizontalAlignment="Left" Margin="85,165,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.069,0.381"/>
+        <PasswordBox Name="txtPassword"  TabIndex="1" HorizontalAlignment="Left" Margin="85,120,0,0" VerticalAlignment="Top" Width="255" FontSize="16" MaxLength="6"/>
+
+    </Grid>
+</Controls:MetroWindow>

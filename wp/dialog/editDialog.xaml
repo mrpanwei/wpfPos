@@ -1,0 +1,31 @@
+﻿<Controls:MetroWindow  x:Class="wp.dialog.editDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:wp.dialog"
+        mc:Ignorable="d"
+         Title="" Height="290" ResizeMode="NoResize"   Width="250"  WindowStartupLocation="CenterScreen"  Focusable="True" PreviewKeyDown="window_PreviewKeyDown">
+    <StackPanel Orientation="Vertical" Background="Wheat">
+        <Image Source="../img/goodsIcon.png" Width="60" Height="60" Margin="0,15,0,0"></Image>
+        <WrapPanel  HorizontalAlignment="Center" Orientation="Horizontal">
+            <Label HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15" Margin="5">名称：</Label>
+            <Label Name="goodsName" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="15" Width="162"></Label>
+        </WrapPanel>
+        <WrapPanel  HorizontalAlignment="Center" Orientation="Horizontal">
+            <Label HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15" Margin="5">单价：</Label>
+            <Label Name="goodsPrice"  HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="15" Width="162"></Label>
+        </WrapPanel>
+        <WrapPanel  HorizontalAlignment="Center" Orientation="Horizontal">
+            <Label HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15" Margin="5">重量：</Label>
+            <Label Name="goodsNum"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15" Width="70"></Label>
+            <TextBox Name="goodsNumEdit"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Width="90"></TextBox>
+        </WrapPanel>
+        <Label HorizontalAlignment="Center" Foreground="Gray">--------------------------------------</Label>
+        <WrapPanel  HorizontalAlignment="Center">
+            <Button Name="YES" Content="确认" Width="70" Margin="0,0,30,0" Click="YES_Click"></Button>
+            <Button Name="NO" Content="取消"  Width="70" Click="NO_Click"></Button>
+        </WrapPanel>
+    </StackPanel>
+</Controls:MetroWindow>
